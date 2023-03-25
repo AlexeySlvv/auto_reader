@@ -1,2 +1,5 @@
-# auto_reader
-Text to speech
+# Auto reader
+
+Uses Silero models 
+
+https://github.com/snakers4/silero-models
