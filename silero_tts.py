@@ -15,12 +15,12 @@ model = torch.package.PackageImporter(
 model.to(device)
 
 
-INPUT_FILE = './txt/input.txt'
-INPUT_DIR = os.path.dirname(os.path.realpath(INPUT_FILE))
-INPUT_NAME = os.path.splitext(os.path.basename(INPUT_FILE))[0]
+INPUT_TXT = './txt/input.txt'
+INPUT_DIR = os.path.dirname(os.path.realpath(INPUT_TXT))
+BASE_NAME = os.path.splitext(os.path.basename(INPUT_TXT))[0]
 
 
-with open(INPUT_FILE, mode='r+', encoding='utf-8') as txt_in:
+with open(INPUT_TXT, mode='r+', encoding='utf-8') as txt_in:
     example_text = txt_in.read()
 
 
@@ -51,4 +51,4 @@ for speaker in speakers:
     for a in audio_lst:
         combined += a
 
-    file_handle = combined.export(os.path.join(INPUT_DIR, f"{INPUT_NAME}_{speaker}.mp3"), format="mp3")
+    file_handle = combined.export(os.path.join(INPUT_DIR, f"{BASE_NAME}_{speaker}.mp3"), format="mp3")
